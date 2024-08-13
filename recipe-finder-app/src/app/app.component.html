@@ -1,0 +1,5 @@
+<div class="container">
+  <h1>Recipe Finder</h1>
+  <app-ingredient-list [ingredients]="ingredients" (ingredientSelected)="onIngredientSelected($event)"></app-ingredient-list>
+  <app-recipe-list [recipes]="recipes" [selectedIngredients]="selectedIngredients"></app-recipe-list>
+</div>

@@ -1,0 +1,26 @@
+<p-table [value]="recipes" responsiveLayout="scroll">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Recipe Name</th>
+      <th>Ingredients</th>
+      <th>Available</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-recipe>
+    <tr [ngClass]="{'available': isRecipeAvailable(recipe)}">
+      <td>{{ recipe.name }}</td>
+      <td>
+        <ul>
+          <li *ngFor="let ingredient of recipe.ingredients" [class.selected]="selectedIngredients.includes(ingredient)">
+            {{ ingredient }}
+          </li>
+        </ul>
+      </td>
+      <td>
+        <span *ngIf="isRecipeAvailable(recipe)" class="pi pi-check-circle" style="color: green;"></span>
+        <span *ngIf="!isRecipeAvailable(recipe)" class="pi pi-times-circle" style="color: red;"></span>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
+
