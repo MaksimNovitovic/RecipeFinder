@@ -1,10 +1,10 @@
-<!-- selected ingredients -->
+
 <p-chips [(ngModel)]="selectedIngredients" 
          (onAdd)="onIngredientSelected($event)" 
          (onRemove)="onIngredientDeselected($event)">
 </p-chips>
 
-<!-- ingredient selection -->
+
 <p-table [value]="ingredients" selectionMode="multiple" [(selection)]="selectedIngredients" dataKey="name" responsiveLayout="scroll">
   <ng-template pTemplate="header">
     <tr>

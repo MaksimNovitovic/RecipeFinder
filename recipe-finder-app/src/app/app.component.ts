@@ -23,9 +23,10 @@ export class AppComponent implements OnInit {
 
   onIngredientSelected(ingredientName: string): void {
     if (this.selectedIngredients.includes(ingredientName)) {
-      this.selectedIngredients = this.selectedIngredients.filter((name) => name !== ingredientName);
+      this.selectedIngredients = this.selectedIngredients.filter(name => name !== ingredientName);
     } else {
       this.selectedIngredients.push(ingredientName);
     }
   }
+
 }

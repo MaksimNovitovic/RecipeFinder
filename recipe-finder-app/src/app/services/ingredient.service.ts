@@ -8,6 +8,6 @@ import { Ingredient } from '../models/ingredient';
 })
 export class IngredientService {
   getIngredients(): Observable<Ingredient[]> {
-    return of(ingredients.map((ingredient: any) => ({ ...ingredient, selected: false })));
+    return of(ingredients.ingredients.map((ingredient: any) => ({ ...ingredient, selected: false })));
   }
 }

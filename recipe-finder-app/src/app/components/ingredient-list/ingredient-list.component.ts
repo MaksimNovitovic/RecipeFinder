@@ -8,26 +8,12 @@ import { Ingredient } from '../../models/ingredient';
 })
 export class IngredientListComponent {
   @Input() ingredients: Ingredient[] = [];
-  @Output() ingredientSelected = new EventEmitter<string[]>();
+  @Output() ingredientSelected = new EventEmitter<string>();
   selectedIngredients: string[] = [];
 
   toggleIngredientSelection(ingredient: Ingredient): void {
     ingredient.selected = !ingredient.selected;
-
-    if (ingredient.selected) {
-      this.selectedIngredients.push(ingredient.name);
-    } else {
-      this.selectedIngredients = this.selectedIngredients.filter(name => name !== ingredient.name);
-    }
-
-    this.ingredientSelected.emit(this.selectedIngredients);
-  }
-
-  onIngredientSelected(event: any): void {
-    this.ingredientSelected.emit(this.selectedIngredients);
-  }
-
-  onIngredientDeselected(event: any): void {
-    this.ingredientSelected.emit(this.selectedIngredients);
+ 
+    this.ingredientSelected.emit(ingredient.name);
   }
 }
