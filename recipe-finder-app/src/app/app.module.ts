@@ -13,7 +13,7 @@ import { AppComponent } from './app.component';
 import { TableModule } from 'primeng/table';
 import { ChipsModule } from 'primeng/chips';
 import { FormsModule } from '@angular/forms';
-import { SharedModule } from 'primeng/api';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
